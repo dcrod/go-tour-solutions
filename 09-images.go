@@ -24,8 +24,7 @@ func (i *Image) Bounds() image.Rectangle {
 }
 
 func (i *Image) At(x, y int) color.Color {
-	v := (255.0 / float64(
-		(i.Rect.Max.X-i.Rect.Min.X) + (i.Rect.Max.Y-i.Rect.Min.Y)))
+	v := (255.0 / float64((i.Rect.Dx() + i.Rect.Dx())))
 	return color.RGBA{0, 0, uint8(v * float64(x+y)), 255}
 }
 
